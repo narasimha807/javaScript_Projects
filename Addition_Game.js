@@ -33,3 +33,6 @@ function checkButtonFunction(){
     }
     console.log(SumOfTwoNumbers);
 }
+let name = localStorage.getItem("name");
+console.log(name);
+

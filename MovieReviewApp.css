@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+.Heading {
+    color: #2d3a35;
+    font-size: 32px;
+    font-family: Roboto;
+    font-weight: 600;
+    text-align: center;
+}
+
+.MovieTitle {
+    color: #0175f1;
+    font-family: Roboto;
+    font-size: 14PX;
+}
+
+.InputElement {
+    background-color:transparent;
+    border-color: #cbd2d9;
+    border-radius: 5px;
+
+}
+
+button {
+    text-align: center;
+}
+
+.ReviewHeading {
+    font-size: 16px;
+}
+
+.para {
+    font-size: 14px;
+}
