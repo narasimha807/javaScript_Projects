@@ -7,6 +7,7 @@ if (clickCount === null){
 }
 else{
   counterValue.textContent = clickCount;
+
 }
 incrementBtn.onclick = function() {
     let previousvalue = counterValue.textContent;

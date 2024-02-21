@@ -1,28 +1,25 @@
 let todoItemsContainer = document.getElementById("todoItemsContainer");
 let AddingTodosButton = document.getElementById("AddingTodosButton");
-let todoArray = [
-                {
-                  text :"Learn HTML",
-                  UniqueNo : 1
-                },
-                {
-                  text :"Learn CSS",
-                  UniqueNo : 2
-                },
-                {
-                  text :"Learn JavaScript",
-                  UniqueNo : 3
-                },
-                {
-                  text : "Learn Node JS",
-                  UniqueNo : 4
-                },
-                {
-                  text : "Learn React JS",
-                  UniqueNo : 5
-                }
-];
+let SaveTodoButton = document.getElementById("SaveTodoButton");
 
+
+function GetTodoLocalStorage(){
+  let stringifiedTodoList = localStorage.getItem("todoArray");
+  let parsedTodoList = JSON.parse(stringifiedTodoList);
+  if(parsedTodoList === null){
+    return [];
+  }
+  else{
+    return parsedTodoList;
+  }
+}
+
+let todoArray = GetTodoLocalStorage();
+
+SaveTodoButton.onclick = function(){
+  localStorage.setItem("todoArray", JSON.stringify(todoArray));
+
+}
 
 let todosCount = todoArray.length;
 
@@ -31,7 +28,6 @@ function OnCheckkedChangedStatus(CheckBoxId, labelId){
   let LabelElement = document.getElementById(labelId);
 
   LabelElement.classList.toggle("checked");
-
 
 }
 
@@ -87,6 +83,7 @@ function createAndAppend(todo){
   iconElement.onclick = function(){
     onDeleteTodo(todoId);
   };
+
 }
 
 function onAddTodo(){
@@ -102,6 +99,8 @@ function onAddTodo(){
     text : userInput,
     UniqueNo : todosCount
   };
+  todoArray.push(newTodo);
+
   createAndAppend(newTodo);
   userInputElement.value = "";
 
